@@ -1,4 +1,7 @@
 
+
+
+ 
 public class BaseRunner{
 	
 	public static void main(String[] args){
@@ -15,14 +18,17 @@ public class BaseRunner{
 		//to check if default variable is accessiable from main class
 		testC.var2=90;
 		//success
-		
+		/*
 		testCaller testC2= new testCaller(5);
 		
 		System.out.println("var value "+testC.getVar());
 		System.out.println("var value "+testC.var2);
 		System.out.println("var2 value "+testC2.getVar());
 		System.out.println("File End");
+		*/
 
+		TryWithStream tws= new TryWithStream();
+		tws.usageOfFilterInStream();
 	
 	}
 	
