@@ -26,6 +26,7 @@ public class TryWithStream{
 		this.intVar=0;
 	}
 	
+	//Filter with count method....
 	public void usageOfFilterInStream(){
 		
 		/*
@@ -45,6 +46,8 @@ public class TryWithStream{
 		System.out.println("total no. of even integers "+countOfEven); //success Result:- total no. of even integers 4
 		
 	}
+	
+	
 	
 	
 
