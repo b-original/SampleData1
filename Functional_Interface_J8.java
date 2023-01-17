@@ -43,8 +43,7 @@ public class testClass{
 		
 		// create anonymous inner class object with runnable interface
 		//lambda expression to create the object below created thread object have expression runnable interface with implementation for run method using lambda expression.
-        new Thread(() ->
-				System.out.println("New thread created");
+	new Thread(()->{System.out.println("New thread created");
         }).start();
 	}
 }
@@ -60,3 +59,19 @@ public class testClass{
 	apply is the method implementation for function interface
 	
 */
+
+public class TestFunction{
+	
+	static String welcomeCall(String str){
+		
+		return "Hello "+str;
+	}
+	
+	public static void main(String[] args){
+		//creating function object
+		Function<String,String> funCall=TestFunction::welcomeCall;
+		System.out.println(funCall.apply("Bhavya Varshney!!"));
+		//output : Hello Bhavya Varshney!!
+	}
+	
+}
