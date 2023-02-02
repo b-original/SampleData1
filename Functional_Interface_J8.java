@@ -71,7 +71,16 @@ public class TestFunction{
 		//creating function object
 		Function<String,String> funCall=TestFunction::welcomeCall;
 		System.out.println(funCall.apply("Bhavya Varshney!!"));
-		//output : Hello Bhavya Varshney!!
+		//output : Hello Bhavya Varshney!! 
 	}
 	
-}
+/*
+	Static and default method in interface
+	prior to Java 8 it was not possible to add new functionality to the existing interface,
+	without forcing all implementing classes to create an implementation of the new methods,
+	nor was it possible to create interface methods with an implementation.
+	so Default methods are added in Java 8 to add backward comptablity and they are capable of overriddding at implementing level to resolve the basic diamond problem, where as Static methods are there to provide functionality that is only available at that level alone, since they does not allow overridding.
+	
+	Refer java file TestStaticAndDefault method.
+	
+*/
