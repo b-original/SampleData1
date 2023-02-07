@@ -33,6 +33,10 @@ public class FunctionTest{
 			System.out.println("Each time get a random value "+randValue.get());
 		}
 		System.out.println("----------------Predicate Interface example-----------------------------");
+		Predicate <Integer> predicateIsTrue=(i)-> i%2==0;
+		for(int i=0;i<5;i++){
+			System.out.println("Each time check if value is Even "+predicateIsTrue.test(i));
+		}
 		
 	}
 	

@@ -91,3 +91,23 @@ class Person{
 	}
 
 }
+
+/*
+	*The Method reference is semantically the same as the lambda expression.
+	*There are four ways to implement method Reference 
+		1.Reference to a static method.
+			ContainingClass::staticMethodName
+			Person::compareByAge
+		2.Reference to an instance method of a particular object
+			containingObject::instanceMethodName
+			e.g. User usr= new User();
+				 usr::toString	
+		3.Reference to an instance method of an arbitrary object of a particular type
+			ContainingType::methodName
+			e.g. String::compareToIgnoreCase
+				 String::concat
+		4.Reference to a constructor
+			ClassName::new
+			e.g. HashSet::new
+	
+*/
