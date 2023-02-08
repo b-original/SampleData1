@@ -1,5 +1,6 @@
 import java.util.*;  
-import java.util.stream.Collectors;  
+import java.util.stream.Collectors; 
+import java.util.Comparator; 
 
 class Product{  
     int id;  
@@ -17,6 +18,10 @@ class Product{
 	
 	public String getName(){
 		return this.name;
+	}
+	
+	public float getPrice(){
+		return this.price;
 	}
 	
 	public String toString(){
@@ -38,6 +43,8 @@ public class JavaStreamRunner{
 		//System.out.println(jsr.printUsingFilterAndCollect(productsList));
 		//jsr.printUsingFilterAndForEach(productsList);
 		//System.out.println(jsr.convertToMap(productsList));
+		
+		jsr.printList(productsList);
 		
 		
 		System.out.println("Use of String.join method to concat two String based on any delimiter");
@@ -66,6 +73,13 @@ public class JavaStreamRunner{
 		
 		Map<Integer, String> productMap=prodList.stream().collect(Collectors.toMap(Product::getId,Product::getName));
 		return productMap;
+	}
+	
+	public void printList(List<Product> prodList){
+		
+		List<Product> filteredProdList=prodList.stream().filter(i->i.price<=30000).sorted(Comparator.comparing(Product::getPrice).reversed()).collect(Collectors.toList());
+		
+		filteredProdList.forEach(System.out::println);
 	}
 	
 	
