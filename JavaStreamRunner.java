@@ -11,6 +11,14 @@ class Product{
         this.price = price;  
     }  
 	
+	public int getId(){
+		return this.id;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
 	public String toString(){
 		return this.name+" "+this.price;
 	}
@@ -27,8 +35,16 @@ public class JavaStreamRunner{
         productsList.add(new Product(4,"Sony Laptop",28000f));  
         productsList.add(new Product(5,"Apple Laptop",90000f));
 		JavaStreamRunner jsr= new JavaStreamRunner();	
-		System.out.println(jsr.printUsingFilterAndCollect(productsList));
-		jsr.printUsingFilterAndForEach(productsList);
+		//System.out.println(jsr.printUsingFilterAndCollect(productsList));
+		//jsr.printUsingFilterAndForEach(productsList);
+		//System.out.println(jsr.convertToMap(productsList));
+		
+		
+		System.out.println("Use of String.join method to concat two String based on any delimiter");
+		String str=String.join("","abc","DEF");
+		System.out.println(str);
+		System.out.println("There is new class StringJoiner introduced as per Java8 which can also be used for string concatination as well.");
+
 	}
 
 
@@ -42,6 +58,14 @@ public class JavaStreamRunner{
 	public void printUsingFilterAndForEach(List<Product> prodList){
 		prodList.stream().filter(i-> i.price<=30000).forEach(System.out::println);
 		
+	}
+	
+	public Map<Integer, String> convertToMap(List<Product> prodList){
+		
+		System.out.println("Here we are using Collectors.tomap() function to create a map out of given list using Id as key and name as value for key.");
+		
+		Map<Integer, String> productMap=prodList.stream().collect(Collectors.toMap(Product::getId,Product::getName));
+		return productMap;
 	}
 	
 	
