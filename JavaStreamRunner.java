@@ -77,7 +77,7 @@ public class JavaStreamRunner{
 	
 	public void printList(List<Product> prodList){
 		
-		List<Product> filteredProdList=prodList.stream().filter(i->i.price<=30000).sorted(Comparator.comparing(Product::getPrice)).collect(Collectors.toList());
+		List<Product> filteredProdList=prodList.stream().filter(i->i.price<=30000).sorted(Comparator.comparing(Product::getPrice).reversed()).collect(Collectors.toList());
 		
 		filteredProdList.forEach(System.out::println);
 	}
