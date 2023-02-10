@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.*;
 
 
 public class StreamTest{
@@ -14,7 +15,13 @@ public class StreamTest{
 	public static void main(String[] args){
 		
 		StreamTest st= new StreamTest();
-		
+		//st.printVariousStreamOption(st);
+	Integer[] intArr= {1,2,3,4,5,6,7,8,9};
+		Double avgValue=Arrays.asList(intArr).stream().mapToInt(i->i.intValue()).average().getAsDouble();
+		System.out.println(avgValue);
+	}
+	
+	public void printVariousStreamOption(StreamTest st){
 		st.dummyStudentData();
 		System.out.println("Student Data: "+st.students.toString());
 		System.out.println("-------------------------------------------------------------------------------");
