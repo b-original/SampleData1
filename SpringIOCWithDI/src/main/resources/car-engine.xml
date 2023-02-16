@@ -1,0 +1,18 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <!--using constructor and ref -->
+    <bean id="car" class="com.springLearning.bean.Car">
+        <constructor-arg value ="AUDI" index="0" />
+        <constructor-arg value ="123456789" index="1" />
+        <constructor-arg ref="engine" index="2" />
+    </bean>
+
+    <!--using properties instead of constructor-->
+    <bean id="engine" class="com.springLearning.bean.Engine">
+        <property name="engineModel" value="E12345"/>
+
+    </bean>
+
+</beans>
