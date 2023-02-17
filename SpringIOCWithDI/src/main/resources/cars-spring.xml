@@ -1,0 +1,47 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <bean id="cars" class="com.springLearning.bean.CarContainer">
+        <property name="cars">
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+                <ref bean="car3"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--car value 1-->
+    <bean id="car1" class="com.springLearning.bean.Car">
+        <constructor-arg value ="AUDI-E56" index="0" />
+        <constructor-arg value ="123456789" index="1" />
+        <constructor-arg ref="engine1" index="2" />
+    </bean>
+
+    <!--using properties instead of constructor-->
+    <bean id="engine1" class="com.springLearning.bean.Engine">
+        <property name="engineModel" value="E12345"/>
+    </bean>
+    <!--car value 2-->
+    <bean id="car2" class="com.springLearning.bean.Car">
+        <constructor-arg value ="AUDI-C24" index="0" />
+        <constructor-arg value ="987654321" index="1" />
+        <constructor-arg ref="engine2" index="2" />
+    </bean>
+
+    <bean id="engine2" class="com.springLearning.bean.Engine">
+        <property name="engineModel" value="E332265"/>
+    </bean>
+    <!--car value 3-->
+    <bean id="car3" class="com.springLearning.bean.Car">
+        <constructor-arg value ="Lexus" index="0" />
+        <constructor-arg value ="123789654" index="1" />
+        <constructor-arg ref="engine3" index="2" />
+    </bean>
+
+    <!--using properties instead of constructor-->
+    <bean id="engine3" class="com.springLearning.bean.Engine">
+        <property name="engineModel" value="L12345"/>
+    </bean>
+</beans>

@@ -1,0 +1,50 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean id="address2" class="com.springLearning.beans.Address">
+        <constructor-arg value ="456" index="0"/>
+        <constructor-arg value ="102, 11th street, City " index="1"/>
+    </bean>
+
+    <bean id="address4" class="com.springLearning.beans.Address">
+        <constructor-arg value ="741" index="0"/>
+        <constructor-arg value ="99, 3rd main street, OutSide " index="1"/>
+    </bean>
+
+    <bean id="student1" class="com.springLearning.beans.Student">
+        <constructor-arg value ="Ajay" index="0"/>
+        <constructor-arg value ="01" index="1"/>
+        <constructor-arg index="2">
+            <bean id="address1" class="com.springLearning.beans.Address">
+                <constructor-arg value ="123" index="0"/>
+                <constructor-arg value ="101, 12th street, City " index="1"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <bean id="student2" class="com.springLearning.beans.Student">
+        <constructor-arg value ="Bhavya" index="0"/>
+        <constructor-arg value ="02" index="1"/>
+        <constructor-arg ref="address2" index="2"/>
+    </bean>
+
+    <bean id="student3" class="com.springLearning.beans.Student">
+        <constructor-arg value ="Chirag" index="0"/>
+        <constructor-arg value ="03" index="1"/>
+        <constructor-arg index="2">
+            <bean id="address3" class="com.springLearning.beans.Address">
+                <constructor-arg value ="789" index="0"/>
+                <constructor-arg value ="201, 9th street, OutSide " index="1"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <bean id="student4" class="com.springLearning.beans.Student">
+        <constructor-arg value ="Debo" index="0"/>
+        <constructor-arg value ="04" index="1"/>
+        <constructor-arg ref="address4" index="2"/>
+    </bean>
+
+
+</beans>

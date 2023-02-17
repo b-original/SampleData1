@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="register" class="com.springLearning.beans.RegisterClass">
+        <constructor-arg value ="Class 11th" index="0"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="student1"/>
+                <ref bean="student2"/>
+                <ref bean="student3"/>
+                <ref bean="student4"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
